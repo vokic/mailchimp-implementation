@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subscribe</title>
+
+    <!-- Mailchimp form styles -->
+    <link
+      href="//cdn-images.mailchimp.com/embedcode/classic-061523.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Keep the popup button as is */
+      #info-btn {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1001;
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+      }
+      #info-btn:hover {
+        background-color: #1e7e34;
+      }
+
+      /* Modal styles remain unchanged */
+      #info-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+
+      #info-modal .modal-content {
+        background: white;
+        max-width: 600px;
+        width: 100%;
+        border-radius: 10px;
+        padding: 20px 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        max-height: 80vh;
+        overflow-y: auto;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      .modal-content li {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        line-height: 1.5;
+      }
+      #info-modal .modal-content h3 {
+        margin-top: 0;
+      }
+      #info-modal .close-btn {
+        background: #e85c41;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        float: right;
+        font-weight: bold;
+      }
+      #info-modal .close-btn:hover {
+        background: #c94b32;
+      }
+
+      /* Body styling with uniform padding on all screens */
+
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 2rem; /* uniform padding on all sides */
+        font-family: Helvetica, Arial, sans-serif;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-image: url("https://images.unsplash.com/photo-1565638427888-268b7714225e?q=80&w=2070&auto=format&fit=crop");
+        background-size: cover; /* ensures full coverage */
+        background-position: center; /* centers the image */
+        background-repeat: no-repeat; /* no repeating */
+      }
+
+      /* Container for the form */
+      #mc_embed_signup {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+        box-sizing: border-box;
+        /* Make sure it doesn't get too close to edges */
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Form inputs */
+      .mc-field-group input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+      }
+
+      /* Override Mailchimp button styles */
+      #mc_embed_signup #mc-embedded-subscribe-form input.button {
+        background-color: #28a745 !important;
+        width: 100% !important;
+        color: white !important;
+        font-size: 16px !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        transition: background-color 0.3s ease !important;
+      }
+
+      #mc_embed_signup #mc-embedded-subscribe-form input.button:hover {
+        background-color: #1e7e34 !important;
+      }
+
+      /* Headings and text */
+      h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      p.info-text {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #666;
+        margin-top: 1rem;
+      }
+
+      /* Logo styling */
+      .logo {
+        width: 220px;
+        height: 40px;
+        margin: 10px auto 20px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Info Popup Button -->
+    <button id="info-btn">Info</button>
+
+    <!-- Info Modal Popup -->
+    <div id="info-modal">
+      <div class="modal-content">
+        <button class="close-btn" aria-label="Close info popup">&times;</button>
+        <h2>What I Did</h2>
+        <ul>
+          <li>
+            Created a new email list in Mailchimp named
+            <strong>"Test Registration List"</strong> for this demo.
+          </li>
+          <li>
+            Used Mailchimp's form builder to generate a clean, simple signup
+            form with Email, First Name, and Last Name fields.
+          </li>
+          <li>
+            Embedded the Mailchimp form into a custom landing page with some
+            styling.
+          </li>
+          <li>
+            Applied custom CSS for a modern, clean design that is fully
+            responsive on mobile and desktop
+            <strong
+              >Since the Mailchimp free does not allow custom CSS I had to
+              override the default styles.</strong
+            >
+          </li>
+          <li>
+            Tested submissions to confirm emails correctly reach the Mailchimp
+            list - all emails are collected and stored in the list.
+          </li>
+        </ul>
+        <p>
+          This project showcases my ability to integrate external marketing
+          tools, customize their appearance, and maintain full functionality and
+          responsiveness within a web page. There are way more options for
+          styling, cusgomization, validation, etc.
+        </p>
+      </div>
+    </div>
+
+    <div id="mc_embed_shell">
+      <div id="mc_embed_signup">
+        <form
+          action="https://gmail.us17.list-manage.com/subscribe/post?u=671294f4a532301712666f012&amp;id=f2e561efcf&amp;f_id=00429fe2f0"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          class="validate"
+          target="_blank"
+          novalidate
+        >
+          <div id="mc_embed_signup_scroll">
+            <a
+              href="https://www.digibiz24.com/en"
+              title="Mailchimp - email marketing made easy and fun"
+            >
+              <img
+                class="logo"
+                src="https://cch-files.edge.live.ds25.io/cch/v/c743e4a3-57b9-11ea-9823-4201c0a80011/files/67e67b7882b36_66194739c15f8-digibiz24-logo-horizontal-full-color.svg"
+                alt="Intuit Mailchimp"
+              />
+            </a>
+
+            <h2>Subscribe to our amazing newsletter</h2>
+
+            <div class="mc-field-group">
+              <label for="mce-EMAIL"
+                >Email Address <span class="asterisk">*</span></label
+              >
+              <input
+                type="email"
+                name="EMAIL"
+                class="required email"
+                id="mce-EMAIL"
+                required
+              />
+            </div>
+
+            <div class="mc-field-group">
+              <label for="mce-FNAME"
+                >First Name <span class="asterisk">*</span></label
+              >
+              <input type="text" name="FNAME" id="mce-FNAME" />
+            </div>
+
+            <div class="mc-field-group">
+              <label for="mce-LNAME">Last Name</label>
+              <input type="text" name="LNAME" id="mce-LNAME" />
+            </div>
+
+            <p class="info-text">
+              We respect your inbox. No spam, just valuable content. Unsubscribe
+              anytime.
+            </p>
+
+            <div id="mce-responses" class="clear foot">
+              <div
+                class="response"
+                id="mce-error-response"
+                style="display: none"
+              ></div>
+              <div
+                class="response"
+                id="mce-success-response"
+                style="display: none"
+              ></div>
+            </div>
+
+            <div aria-hidden="true" style="position: absolute; left: -5000px">
+              <input
+                type="text"
+                name="b_671294f4a532301712666f012_f2e561efcf"
+                tabindex="-1"
+                value=""
+              />
+            </div>
+
+            <div>
+              <input
+                type="submit"
+                name="subscribe"
+                id="mc-embedded-subscribe"
+                class="button"
+                value="Subscribe"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script>
+      // Popup functionality
+      const infoBtn = document.getElementById("info-btn");
+      const infoModal = document.getElementById("info-modal");
+      const closeBtn = infoModal.querySelector(".close-btn");
+
+      infoBtn.addEventListener("click", () => {
+        infoModal.style.display = "flex";
+        infoBtn.setAttribute("aria-expanded", "true");
+        infoModal.focus();
+      });
+
+      closeBtn.addEventListener("click", () => {
+        infoModal.style.display = "none";
+        infoBtn.setAttribute("aria-expanded", "false");
+        infoBtn.focus();
+      });
+
+      // Close modal on outside click
+      infoModal.addEventListener("click", (e) => {
+        if (e.target === infoModal) {
+          infoModal.style.display = "none";
+          infoBtn.setAttribute("aria-expanded", "false");
+          infoBtn.focus();
+        }
+      });
+
+      (function ($) {
+        window.fnames = [];
+        window.ftypes = [];
+        fnames[0] = "EMAIL";
+        ftypes[0] = "email";
+        fnames[1] = "FNAME";
+        ftypes[1] = "text";
+        fnames[2] = "LNAME";
+        ftypes[2] = "text";
+      })(jQuery);
+      var $mcj = jQuery.noConflict(true);
+    </script>
+  </body>
+</html>
