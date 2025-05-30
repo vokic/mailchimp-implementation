@@ -1,4 +1,5 @@
-# Mailchimp Implementation
+# 6. Email List & Registration Module - Mailchimp Implementation
+
 ## What I Did
 
 - Created a new email list in Mailchimp named **"Test Registration List"** for this demo.
